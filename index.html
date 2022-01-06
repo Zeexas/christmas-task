@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Christmas-task</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Neucha&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="./src/assets/favicon.png" />
+    <!-- <link rel="icon" type="image/x-icon" href="./src/assets/favicon.png" /> -->
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <div class="start-nav nav-item"></div>
+        <p class="toys-nav header-title neucha-title nav-item">Игрушки</p>
+        <p class="tree-nav header-title neucha-title nav-item">Ёлка</p>
+      </nav>
+
+      <div class="search-chosen-box">
+        <div class="search-box">
+          <input
+            class="search"
+            type="text"
+            placeholder="Поиск"
+            autofocus
+            maxlength="18"
+          />
+          <div class="search-cross hide"></div>
+        </div>
+        <div class="toys-chosen-count_ball">
+          <p class="toys-chosen-count">0</p>
+          <p class="toys-chosen-message">Извините, все слоты заполнены</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="app">
+      <div class="start-page hide">
+        <img class="start-ball-1" src="src/assets/ball/1.png" alt="ball-1" />
+        <img class="start-ball-2" src="src/assets/ball/2.png" alt="ball-2" />
+        <div class="start-content">
+          <p class="start-text">Помогите бабушке<br />нарядить ёлку</p>
+          <p class="start-btn">Начать</p>
+        </div>
+      </div>
+
+      <div class="toys hide">
+        <section class="toys-content">
+          <aside class="toys-sidebar">
+            <div class="sort">
+              <span class="sort-title neucha-title">Сортировать</span>
+              <select class="sort-select" name="sort-select" id="sort-select">
+                <option value="no-sort" selected>Без сортировки</option>
+                <option value="name-ascend">
+                  По наименованию от &laquo;А&raquo; до &laquoЯ&raquo;
+                </option>
+                <option value="name-descend">
+                  По наименованию от &laquoЯ&raquo до &laquoА&raquo
+                </option>
+                <option value="year-ascend">По возрастанию (год)</option>
+                <option value="year-descend">По убыванию (год)</option>
+              </select>
+            </div>
+
+            <p class="category neucha-title">Категории</p>
+
+            <div class="shape">
+              <p class="shape-title">Форма</p>
+              <div class="shape-kit">
+                <label class="shape-checkbox-label">
+                  <input class="checkbox-hide check-bell" type="checkbox" />
+                  <div class="shape-item">
+                    <img
+                      class="shape-img"
+                      src="./src/assets/svg/bell.svg"
+                      alt="bell"
+                    />
+                    <div class="shape-name">Колокол</div>
+                  </div>
+                </label>
+                <label class="shape-checkbox-label">
+                  <input class="checkbox-hide check-ball" type="checkbox" />
+                  <div class="shape-item">
+                    <img
+                      class="shape-img"
+                      src="./src/assets/svg/ball.svg"
+                      alt="ball"
+                    />
+                    <div class="shape-name">Шар</div>
+                  </div>
+                </label>
+                <label class="shape-checkbox-label">
+                  <input class="checkbox-hide check-cone" type="checkbox" />
+                  <div class="shape-item">
+                    <img
+                      class="shape-img"
+                      src="./src/assets/svg/cone.svg"
+                      alt="cone"
+                    />
+                    <div class="shape-name">Шишка</div>
+                  </div>
+                </label>
+                <label class="shape-checkbox-label">
+                  <input
+                    class="checkbox-hide check-snowflake"
+                    type="checkbox"
+                  />
+                  <div class="shape-item">
+                    <img
+                      class="shape-img"
+                      src="./src/assets/svg/snowflake.svg"
+                      alt="snowflake"
+                    />
+                    <div class="shape-name">Снежинка</div>
+                  </div>
+                </label>
+                <label class="shape-checkbox-label">
+                  <input class="checkbox-hide check-toy" type="checkbox" />
+                  <div class="shape-item">
+                    <img
+                      class="shape-img"
+                      src="./src/assets/svg/toy.svg"
+                      alt="bird-toy"
+                    />
+                    <div class="shape-name">Фигурка</div>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div class="slider-block">
+              <div class="count">
+                <p class="count-title">Количество экземпляров</p>
+                <div class="count-slider" id="count-slider"></div>
+                <div class="count-value">
+                  <span class="count-value_min"></span>
+                  <span class="count-value_max"></span>
+                </div>
+              </div>
+
+              <div class="year">
+                <p class="year-title">Год приобретения</p>
+                <div class="year-slider" id="year-slider"></div>
+                <div class="year-value">
+                  <span class="year-value_start"></span>
+                  <span class="year-value_end"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="color">
+              <p class="color-title">Цвет</p>
+              <div class="color-kit">
+                <label class="color-checkbox-label">
+                  <input class="checkbox-hide check-white" type="checkbox" />
+                  <div class="color-white color-item"></div>
+                </label>
+                <label class="color-checkbox-label">
+                  <input class="checkbox-hide check-yellow" type="checkbox" />
+                  <div class="color-yellow color-item"></div>
+                </label>
+                <label class="color-checkbox-label">
+                  <input class="checkbox-hide check-red" type="checkbox" />
+                  <div class="color-red color-item"></div>
+                </label>
+                <label class="color-checkbox-label">
+                  <input class="checkbox-hide check-blue" type="checkbox" />
+                  <div class="color-blue color-item"></div>
+                </label>
+                <label class="color-checkbox-label">
+                  <input class="checkbox-hide check-green" type="checkbox" />
+                  <div class="color-green color-item"></div>
+                </label>
+              </div>
+            </div>
+
+            <div class="size">
+              <p class="size-title">Размер</p>
+              <div class="size-kit">
+                <label class="size-checkbox-label"
+                  >Большой
+                  <input class="checkbox-hide check-big" type="checkbox" />
+                  <div class="size-big size-item"></div>
+                </label>
+                <label class="size-checkbox-label"
+                  >Средний
+                  <input class="checkbox-hide check-medium" type="checkbox" />
+                  <div class="size-medium size-item"></div>
+                </label>
+                <label class="size-checkbox-label"
+                  >Маленький
+                  <input class="checkbox-hide check-small" type="checkbox" />
+                  <div class="size-small size-item"></div>
+                </label>
+              </div>
+            </div>
+
+            <div class="favor-and-btn">
+              <div class="favorite">
+                <label class="favor-checkbox-label"
+                  >Только любимые
+                  <input class="checkbox-hide check-favor" type="checkbox" />
+                  <div class="favor-item"></div>
+                </label>
+              </div>
+
+              <button class="button no-filter">Сбросить фильтры</button>
+              <button class="button no-settings">Сбросить настройки</button>
+            </div>
+          </aside>
+
+          <article class="toys-stock">
+            <p class="no-matches hide">Извините, совпадений не обнаружено</p>
+            <div class="toys-stock-cards"></div>
+            <!-- <div class="card">
+              <div class="card-name">Большой шар с рисунком Цветок</div>
+              <img class="card-img" src="./src/assets/toys/1.png" alt="ball" />
+              <div class="card-text">
+                <div class="card-count text-line">Количество: 2</div>
+                <div class="card-year text-line">Год покупки: 1960 год</div>
+                <div class="card-shape text-line">Форма игрушки: шар</div>
+                <div class="card-color text-line">Цвет игрушки: желтый</div>
+                <div class="card-size text-line">Размер игрушки: большой</div>
+                <div class="card-favor text-line">Любимая: нет</div>
+              </div>
+              <div class=ribbon></div>
+            </div> -->
+          </article>
+        </section>
+      </div>
+
+      <div class="tree">
+        <div class="tree-content">
+          <section class="tree-left">
+            <div class="music-snow">
+              <!-- <audio class="track" src="./src/assets/audio/audio.mp3"></audio> -->
+              <div class="music"></div>
+              <div class="snow"></div>
+            </div>
+            <div class="pick-tree">
+              <p class="pick-tree-title neucha-title">Выберите ёлку</p>
+              <div class="pick-tree_stock">
+                <!-- <div class="pick-tree_item">
+                  <img class="pick-tree_item-img" src="./src/assets/tree/1.png" alt="tree-1">
+                </div> -->
+              </div>
+            </div>
+            <div class="pick-bg">
+              <p class="pick-bg-title neucha-title">Выберите фон</p>
+              <div class="pick-bg_stock">
+                <!-- <div class="pick-bg_item">
+                  <img class="pick-bg_item-img" src="./src/assets/bg/1.jpg" alt="bg-1">
+                </div> -->
+              </div>
+            </div>
+            <div class="pick-garland">
+              <p class="pick-garland-title neucha-title">Гирлянда</p>
+              <div class="pick-garland_stock">
+                <div class="garland-btn-box">
+                  <button
+                    class="garland-btn multicolor-btn"
+                    data-color="multicolor"
+                  ></button>
+                  <button class="garland-btn red-btn" data-color="red"></button>
+                  <button
+                    class="garland-btn blue-btn"
+                    data-color="blue"
+                  ></button>
+                  <button
+                    class="garland-btn yellow-btn"
+                    data-color="yellow"
+                  ></button>
+                  <button
+                    class="garland-btn green-btn"
+                    data-color="green"
+                  ></button>
+                </div>
+                <div class="garland-on">
+                  <label class="garland-toggle">
+                    <input class="garland-checkbox" type="checkbox" />
+                    <div class="switch"></div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="tree-center">
+            <div class="tree-center-image">
+              <!-- <img
+                class="dress-tree"
+                src="./src/assets/tree/1.png"
+                alt="tree-1"
+              /> -->
+            </div>
+            <div class="garland-on-tree">
+              <!-- <svg class="garland light-1">
+                <circle cx="350" cy="170" r="3" class="red" />
+                <circle cx="365" cy="178" r="3" class="blue" />
+                <circle cx="380" cy="180" r="3" class="yellow" />
+                <circle cx="395" cy="177" r="3" class="green" />
+                <circle cx="410" cy="170" r="3" class="red" />
+              </svg>
+              <svg class="garland light-2">
+                <circle cx="330" cy="230" r="3" class="red" />
+                <circle cx="347" cy="239" r="3" class="blue" />
+                <circle cx="364" cy="244" r="3" class="yellow" />
+                <circle cx="380" cy="245" r="3" class="green" />
+                <circle cx="397" cy="244" r="3" class="red" />
+                <circle cx="414" cy="239" r="3" class="blue" />
+                <circle cx="430" cy="230" r="3" class="yellow" />
+              </svg>
+              <svg class="garland light-3">
+                <circle cx="314" cy="290" r="3" class="red" />
+                <circle cx="330" cy="300" r="3" class="blue" />
+                <circle cx="347" cy="306" r="3" class="yellow" />
+                <circle cx="364" cy="310" r="3" class="green" />
+                <circle cx="380" cy="312" r="3" class="red" />
+                <circle cx="397" cy="310" r="3" class="blue" />
+                <circle cx="414" cy="306" r="3" class="yellow" />
+                <circle cx="430" cy="300" r="3" class="green" />
+                <circle cx="446" cy="290" r="3" class="red" />
+              </svg>
+              <svg class="garland light-4">
+                <circle cx="300" cy="350" r="3" class="green" />
+                <circle cx="314" cy="362" r="3" class="red" />
+                <circle cx="330" cy="370" r="3" class="blue" />
+                <circle cx="347" cy="376" r="3" class="yellow" />
+                <circle cx="364" cy="380" r="3" class="green" />
+                <circle cx="380" cy="382" r="3" class="red" />
+                <circle cx="397" cy="380" r="3" class="blue" />
+                <circle cx="414" cy="376" r="3" class="yellow" />
+                <circle cx="430" cy="370" r="3" class="green" />
+                <circle cx="446" cy="362" r="3" class="red" />
+                <circle cx="460" cy="350" r="3" class="blue" />
+              </svg>
+              <svg class="garland light-5">
+                <circle cx="285" cy="420" r="3" class="yellow" />
+                <circle cx="300" cy="430" r="3" class="green" />
+                <circle cx="314" cy="438" r="3" class="red" />
+                <circle cx="330" cy="447" r="3" class="blue" />
+                <circle cx="347" cy="452" r="3" class="yellow" />
+                <circle cx="364" cy="454" r="3" class="green" />
+                <circle cx="380" cy="455" r="3" class="red" />
+                <circle cx="397" cy="454" r="3" class="blue" />
+                <circle cx="414" cy="452" r="3" class="yellow" />
+                <circle cx="430" cy="447" r="3" class="green" />
+                <circle cx="446" cy="438" r="3" class="red" />
+                <circle cx="460" cy="430" r="3" class="blue" />
+                <circle cx="475" cy="420" r="3" class="yellow" />
+              </svg>
+              <svg class="garland light-6">
+                <circle cx="270" cy="495" r="3" class="blue" />
+                <circle cx="285" cy="504" r="3" class="yellow" />
+                <circle cx="300" cy="510" r="3" class="green" />
+                <circle cx="314" cy="515" r="3" class="red" />
+                <circle cx="330" cy="519" r="3" class="blue" />
+                <circle cx="347" cy="522" r="3" class="yellow" />
+                <circle cx="364" cy="524" r="3" class="green" />
+                <circle cx="380" cy="525" r="3" class="red" />
+                <circle cx="397" cy="524" r="3" class="blue" />
+                <circle cx="414" cy="522" r="3" class="yellow" />
+                <circle cx="430" cy="519" r="3" class="green" />
+                <circle cx="446" cy="515" r="3" class="red" />
+                <circle cx="460" cy="510" r="3" class="blue" />
+                <circle cx="475" cy="504" r="3" class="yellow" />
+                <circle cx="490" cy="495" r="3" class="green" />
+              </svg>
+              <svg class="garland light-7">
+                <circle cx="250" cy="565" r="3" class="red" />
+                <circle cx="270" cy="574" r="3" class="blue" />
+                <circle cx="285" cy="580" r="3" class="yellow" />
+                <circle cx="300" cy="586" r="3" class="green" />
+                <circle cx="314" cy="590" r="3" class="red" />
+                <circle cx="330" cy="595" r="3" class="blue" />
+                <circle cx="347" cy="598" r="3" class="yellow" />
+                <circle cx="364" cy="599" r="3" class="green" />
+                <circle cx="380" cy="600" r="3" class="red" />
+                <circle cx="397" cy="599" r="3" class="blue" />
+                <circle cx="414" cy="598" r="3" class="yellow" />
+                <circle cx="430" cy="595" r="3" class="green" />
+                <circle cx="446" cy="590" r="3" class="red" />
+                <circle cx="460" cy="586" r="3" class="blue" />
+                <circle cx="475" cy="580" r="3" class="yellow" />
+                <circle cx="490" cy="574" r="3" class="green" />
+                <circle cx="510" cy="565" r="3" class="red" />
+              </svg> -->
+            </div>
+          </section>
+
+          <section class="tree-right">
+            <div class="pick-chosen">
+              <p class="pick-chosen-title neucha-title">Игрушки</p>
+              <div class="pick-chosen_stock">
+                <!-- <div class="pick-chosen_item">
+                  <img
+                    class="pick-chosen_item-img"
+                    src="./src/assets/tree/1.png"
+                    alt="tree-1"
+                  />
+                </div> -->
+              </div>
+            </div>
+            <div class="pick-dressed">
+              <p class="pick-dressed-title neucha-title">Вы нарядили</p>
+              <div class="pick-dressed_stock">
+                <!-- <div class="pick-dressed_item">
+                  <img
+                    class="pick-dressed_item-img"
+                    src="./src/assets/tree/1.png"
+                    alt="tree-1"
+                  />
+                </div> -->
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-left">
+        <time class="year">2021</time>
+        <a class="github" href="https://github.com/Zeexas" target="_blank"
+          >github</a
+        >
+      </div>
+      <a href="https://rs.school/js/" target="_blank">
+        <img class="rsschool" src="src/assets/svg/rss.svg" alt="rs_school_js" />
+      </a>
+    </footer>
+    <script src="./src/index.ts"></script>
+  </body>
+</html>
