@@ -1,0 +1,102 @@
+@media (max-width: 1024px) {
+  .toys-content {
+    flex-direction: column;
+    /* justify-content: flex-end; */
+    width: 100%;
+    /* background-color: lightcoral; */
+  }
+
+  .toys-sidebar {
+    position: relative;
+    left: 0;
+    top: var(--header-h);
+    width: 100%;
+    height: calc(100% - var(--footer-height));
+    height: auto;
+    padding: 2rem var(--toys-padding);
+    background-color: var(--main-color);
+    /* background-color: lightgreen; */
+  }
+
+  .toys-stock {
+    display: flex;
+    max-width: 100%;
+    width: 100%;
+    /* padding: var(--header-h) 2vw var(--footer-height) 2vw; */
+    /* background-color: darkslategray; */
+  }
+
+  .toys-stock-cards {
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    width: 100vw;
+    /* background-color: lightyellow; */
+  }
+
+  .no-matches {
+    position: relative;
+    display: block;
+    top: 0;
+    left: 0;
+    /* background-color: goldenrod; */
+  }
+
+  .shape {
+    flex-direction: row;
+    margin-bottom: 2rem;
+    /* background-color: lightskyblue; */
+  }
+
+  .count,
+  .year,
+  .color,
+  .size,
+  .favorite {
+    width: 40%;
+    margin-bottom: 3vw;
+    margin-right: 5vw;
+    font-size: calc(1vw + 0.5rem);
+    /* background-color: skyblue; */
+  }
+
+  .count,
+  .year {
+    min-width: 18rem;
+  }
+
+  .shape-title,
+  .count-title,
+  .year-title,
+  .color-title,
+  .size-title {
+    font-size: calc(0.8vw + 0.7rem);
+    margin-bottom: 2vw;
+  }
+
+  .slider-block {
+    width: 100%;
+    flex-flow: row wrap;
+  }
+
+  .color {
+    flex-flow: row nowrap;
+  }
+
+  .size {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  .favor-and-btn {
+    display: flex;
+    /* justify-content: space-between; */
+    /* background-color: lightskyblue; */
+  }
+
+  .button {
+    width: 10rem;
+    padding: 0.2rem 1rem;
+    font-size: 12px;
+    line-height: 0.8rem;
+  }
+}
